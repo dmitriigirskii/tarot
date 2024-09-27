@@ -1,5 +1,5 @@
 body
-  background: black
+  background: radial-gradient(#393939, #000000e8)
   color: white
 
 $overlap: 15px
@@ -18,17 +18,35 @@ $overlap: 15px
   padding-bottom: var(--p40)
 
 .stack
-  height: 255px
   //overflow: hidden
   width: calc(180px + #{$overlap} * (78 - 1))
   position: relative
 
 .stack_select
   position: relative
+  display: grid
+  justify-content: center
+
+  figure
+    // height: 255px
+
+    img
+      max-width: 100%
+      height: auto
 
   ul
+    list-style: none
     display: flex
     gap: 20px
+
+  li
+    padding: var(--p10)
+    border: 1px solid grey
+    display: grid
+    justify-content: center
+
+    p
+      text-align: center
 
 .card_true
   width: 180px
@@ -89,8 +107,6 @@ $overlap: 15px
 
   figure
     display: flex
-    width: 100%
-    height: 100%
     background: #eeddcc
     justify-content: center
 
