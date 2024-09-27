@@ -52,12 +52,6 @@ export default function TarotDesk() {
                 </ul>
             </div>
 
-            <br/>
-            <br/>
-            <br/>
-            <hr/>
-            <br/>
-
             <div className={styles.stack}>
                 {tarotCards.map(card => (
                     <div
