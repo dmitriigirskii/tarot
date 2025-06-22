@@ -34,7 +34,7 @@ export default function TarotDesk() {
                         <li key={card}>
                             <div className={styles.card_false}>
                                 <figure>
-                                    <img src={`/images/${card.image}`} alt={card.title}/>
+                                    <img src={`${import.meta.env.BASE_URL}images/${card.image}`} alt={card.title}/>
                                 </figure>
                             </div>
                             <p>{card.title}</p>
