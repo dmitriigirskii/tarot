@@ -28,7 +28,7 @@ export default function TarotDesk() {
         <div className={styles.desk}>
 
             <div className={styles.stack_select}>
-                <h2>Selected Cards:</h2>
+                <h2>Select Cards</h2>
                 <ul>
                     {selectedCards.map(card => (
                         <li key={card}>
