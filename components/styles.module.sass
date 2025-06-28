@@ -7,9 +7,10 @@ html
   height: 100%
 
 body
-  background: radial-gradient(#393939, #000000e8)
+  background: #000000e8
   color: white
   height: 100%
+  font-family: sans-serif
 
   > *
     // height: 100%
@@ -34,6 +35,8 @@ $overlap: 35px
   width: calc(180px + #{$overlap} * (78 - 1))
   height: 297px
   margin: auto
+  display: flex
+  align-items: flex-end
 
 .stack_select
   position: relative
@@ -69,11 +72,12 @@ $overlap: 35px
 
 .card_true
   width: calc(180px / 2)
-  height: calc(255px / 2)
+  // height: calc(255px / 2)
+  height: calc(295px / 2)
   background: #161616
   border-radius: 10px
   position: absolute
-  border: 1px solid #323232
+  border: 1px solid black
   display: flex
   align-items: center
   justify-content: center
@@ -102,6 +106,7 @@ $overlap: 35px
 
 
 .card_true
+  background: url(/images/background.jpeg) 50% 50% / cover no-repeat
   @for $i from 1 through 78
     &:nth-child(#{$i})
       //z-index: 78 - #{$i}
@@ -111,13 +116,14 @@ $overlap: 35px
         z-index: 1
         cursor: pointer
         transform: translateX(#{$overlap * ($i - 1)}) translateY(-20px)
+        background: url(/images/background.jpeg) 50% 50% / cover no-repeat
 
 .card_false
   width: 180px
   // height: 255px
   background: linear-gradient(var(--cDark2), var(--cDark1))
   border-radius: var(--r10)
-  border: 1px solid var(--border)
+  border: 1px solid red
   display: flex
   align-items: center
   justify-content: center

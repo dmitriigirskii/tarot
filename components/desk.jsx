@@ -56,9 +56,11 @@ export default function TarotDesk() {
                 {
                     overflow: 'scroll',
                     position: 'fixed',
-                    left: '20px',
-                    right: '20px',
-                    bottom: '40px',
+                    left: '0px',
+                    right: '0px',
+                    bottom: '0px',
+                    padding: '0 20px 20px',
+                    background: 'linear-gradient(transparent, black)'
                 }
             }>
                 <div className={styles.stack}>
