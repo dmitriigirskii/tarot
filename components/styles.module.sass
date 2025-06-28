@@ -12,10 +12,10 @@ body
   height: 100%
 
   > *
-    height: 100%
+    // height: 100%
     padding-bottom: 297px
 
-$overlap: 15px
+$overlap: 35px
 
 .selectedCards
   height: 255px
@@ -32,11 +32,6 @@ $overlap: 15px
 .stack
   //overflow: hidden
   width: calc(180px + #{$overlap} * (78 - 1))
-  position: relative
-  position: fixed
-  left: 0
-  right: 0
-  bottom: 40px
   height: 297px
   margin: auto
 
@@ -55,7 +50,10 @@ $overlap: 15px
   ul
     list-style: none
     display: flex
+    flex-wrap: wrap
     gap: 20px
+    justify-content: center
+    padding: 40px
 
   li
     padding: var(--p10)
@@ -65,10 +63,13 @@ $overlap: 15px
 
     p
       text-align: center
+      width: 180px
+      padding: 20px
+      font-size: 12pxpx
 
 .card_true
-  width: 180px
-  height: 255px
+  width: calc(180px / 2)
+  height: calc(255px / 2)
   background: #161616
   border-radius: 10px
   position: absolute
@@ -138,7 +139,7 @@ $overlap: 15px
   opacity: 0
 
 .emptyCard
-  width: 180px
-  height: 255px
+  width: calc(180px / 2)
+  height: calc(255px / 2)
   background: white
   opacity: 0.1

@@ -52,16 +52,26 @@ export default function TarotDesk() {
                 </ul>
             </div>
 
-            <div className={styles.stack}>
-                {tarotCards.map(card => (
-                    <div
-                        key={card}
-                        onClick={() => handleCardClick(card)}
-                        className={`${styles.card_true} ${animatingCard === card ? styles.animateMove : ''}`}
-                    >
-                        <p>{card.id}</p>
-                    </div>
-                ))}
+            <div style={
+                {
+                    overflow: 'scroll',
+                    position: 'fixed',
+                    left: '20px',
+                    right: '20px',
+                    bottom: '40px',
+                }
+            }>
+                <div className={styles.stack}>
+                    {tarotCards.map(card => (
+                        <div
+                            key={card}
+                            onClick={() => handleCardClick(card)}
+                            className={`${styles.card_true} ${animatingCard === card ? styles.animateMove : ''}`}
+                        >
+                            <p>{card.id}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
