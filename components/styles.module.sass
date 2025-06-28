@@ -11,13 +11,37 @@ body
   color: white
   height: 100%
   font-family: sans-serif
+  padding-top: 255px
 
   > *
     // height: 100%
     padding-bottom: 297px
 
 $overlap: 35px
+.fullCard
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  background: rgba(0,0,0,.8)
+  z-index: 100
+  backdrop-filter: blur(50px)
 
+  div
+    max-width: 320px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    text-align: center
+    margin: auto
+    padding: 40px
+    gap: 20px
+    
+    p
+      line-height: 1.5e
+      opacity: .75
+  
 .selectedCards
   height: 255px
   //overflow: hidden
@@ -25,23 +49,32 @@ $overlap: 35px
   position: relative
 
 .desk
-  display: flex
+  // display: flex
   justify-content: center
   align-items: center
   height: 100%
 
 .stack
   //overflow: hidden
-  width: calc(180px + #{$overlap} * (78 - 1))
-  height: 297px
+  // width: calc(180px + #{$overlap} * (78 - 1))
+  // height: 297px
   margin: auto
   display: flex
   align-items: flex-end
+  flex-wrap: wrap
+  gap: 10px
+  justify-content: center
 
 .stack_select
   position: relative
   display: grid
   justify-content: center
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  background: linear-gradient(black, transparent)
+  z-index: 99
 
   figure
     // height: 255px
@@ -60,7 +93,6 @@ $overlap: 35px
 
   li
     padding: var(--p10)
-    border: 1px solid grey
     display: grid
     justify-content: center
 
@@ -76,7 +108,7 @@ $overlap: 35px
   height: calc(295px / 2)
   background: #161616
   border-radius: 10px
-  position: absolute
+  // position: absolute
   border: 1px solid black
   display: flex
   align-items: center
@@ -110,20 +142,21 @@ $overlap: 35px
   @for $i from 1 through 78
     &:nth-child(#{$i})
       //z-index: 78 - #{$i}
-      transform: translateX(#{$overlap * ($i - 1)})
+      // transform: translateX(#{$overlap * ($i - 1)})
 
       &:hover
         z-index: 1
         cursor: pointer
-        transform: translateX(#{$overlap * ($i - 1)}) translateY(-20px)
+        transform: scale(1.2)
+        // transform: translateX(#{$overlap * ($i - 1)}) translateY(-20px)
         background: url(/images/background.jpeg) 50% 50% / cover no-repeat
 
 .card_false
-  width: 180px
+  width: calc(180px / 2)
   // height: 255px
   background: linear-gradient(var(--cDark2), var(--cDark1))
-  border-radius: var(--r10)
-  border: 1px solid red
+  // border-radius: 10px
+  border: 1px solid black
   display: flex
   align-items: center
   justify-content: center
@@ -147,5 +180,6 @@ $overlap: 35px
 .emptyCard
   width: calc(180px / 2)
   height: calc(255px / 2)
-  background: white
-  opacity: 0.1
+  background: black
+  border-radius: 10px
+  // opacity: 0.1
